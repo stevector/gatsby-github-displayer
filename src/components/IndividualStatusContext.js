@@ -1,8 +1,6 @@
 import React from "react"
 
 const IndividualStatusContext = function ( statusContext ) {
-
-  console.log(statusContext);
   
   var divStyle = {backgroundColor: "red"};
   switch (statusContext.statusContext.state) {
