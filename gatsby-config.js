@@ -18,10 +18,6 @@ module.exports = {
             },
             fetch,
           }),
-        createSchema: async () => {
-          const json = JSON.parse(fs.readFileSync(`${__dirname}/github.json`))
-          return buildClientSchema(json.data)
-        },
       },
     },
   ],
