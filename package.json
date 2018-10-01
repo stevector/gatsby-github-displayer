@@ -8,10 +8,10 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
-    "gatsby": "./gatsby.tgz",
-    "gatsby-source-graphql": "file:./gatsby-source-graphql.tgz",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2"
+    "gatsby": "^2.0.14",
+    "gatsby-source-graphql": "^2.0.3",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
   },
   "devDependencies": {
     "babel-eslint": "8.2.1",
