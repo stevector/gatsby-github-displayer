@@ -1,4 +1,6 @@
 import React from "react"
+import IndividualStatusContext from "./IndividualStatusContext"
+import StatusContextList from "./StatusContextList"
 
 const RepositoryList = ({ repositories }) => (
   <div>
@@ -11,6 +13,10 @@ const RepositoryList = ({ repositories }) => (
         <br />
         status: {repository.node.defaultBranchRef.target.status.state}
         <br />
+         <StatusContextList statusContexts={repository.node.defaultBranchRef.target.status.contexts} />
+
+
+            
       </div>
     ))}
   </div>
