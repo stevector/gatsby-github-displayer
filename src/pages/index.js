@@ -25,24 +25,7 @@ export const query = graphql`
         }
       }
     }
-
-
-
-  
-
   }
-
-
-
-
-
-
-
-
-
-
-
-
 
   fragment RepoStatus on GitHub_Repository  {
     name,
