@@ -1,18 +1,18 @@
 import React from "react"
 import RepositoryList from "../components/RepositoryList"
 
-const RepList = ({ data }) => (
+const Dashboard = ({ data }) => (
   <div>
     <h1>My repositories</h1>
     <RepositoryList repositories={data.github.search.edges} />
   </div>
 )
 
-export default RepList
+export default Dashboard
 
 export const query = graphql`
 
-query RepQuery($searchstring: String!) {
+query DashboardQuery($searchstring: String!) {
   github {
     search(query: $searchstring, type: REPOSITORY, first: 100) {
       edges {
@@ -20,7 +20,7 @@ query RepQuery($searchstring: String!) {
          ... on GitHub_Repository {
            name,
            url,
-           ... RepoStatus1
+           ... RepoStatus2
          }
        }
       }
@@ -28,7 +28,7 @@ query RepQuery($searchstring: String!) {
   }
 }
 
-fragment RepoStatus1 on GitHub_Repository  {
+fragment RepoStatus2 on GitHub_Repository  {
   name,
   defaultBranchRef {
     name,
@@ -43,20 +43,20 @@ fragment RepoStatus1 on GitHub_Repository  {
           email
           name
         },
-        ... CommitStatus1
+        ... CommitStatus2
       }
     }
   }
 }
-fragment CommitStatus1 on GitHub_Commit {
+fragment CommitStatus2 on GitHub_Commit {
   status {
     state,
     contexts {
-      ... StatusContextInfo1
+      ... StatusContextInfo2
     }
   }
 }
-fragment StatusContextInfo1 on GitHub_StatusContext {
+fragment StatusContextInfo2 on GitHub_StatusContext {
   state,
   context,
   createdAt,
