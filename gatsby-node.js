@@ -13,7 +13,7 @@ exports.createPages = ({ actions, graphql }) => {
         path: 'dashboard',
         component: Dashboard,
         context: {
-          searchstring: "repo:stevector/migrate_pantheon repo:stevector/nerdologues-d8 repo:pantheon-systems/terminus-build-tools-plugin"
+          searchstring:   "repo:stevector/nerdologues-d8          repo:pantheon-systems/terminus-build-tools-plugin   repo:stevector/nerdologues-d8          repo:pantheon-systems/pantheon-wordpress-develop         repo:pantheon-systems/example-drops-8-composer          repo:pantheon-systems/drops-8           repo:pantheon-systems/wp-saml-auth           repo:pantheon-systems/wp-redis          repo:pantheon-systems/WordPress          repo:pantheon-systems/wp-native-php-sessions          repo:pantheon-systems/solr-power          repo:stevector/migrate_pantheon"
         },
       })
     )
