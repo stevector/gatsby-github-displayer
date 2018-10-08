@@ -20,7 +20,7 @@ query DashboardQuery($searchstring: String!) {
          ... on GitHub_Repository {
            name,
            url,
-           ... RepoStatus2
+           ... RepoStatus
          }
        }
       }
@@ -28,7 +28,7 @@ query DashboardQuery($searchstring: String!) {
   }
 }
 
-fragment RepoStatus2 on GitHub_Repository  {
+fragment RepoStatus on GitHub_Repository  {
   name,
   defaultBranchRef {
     name,
@@ -43,20 +43,20 @@ fragment RepoStatus2 on GitHub_Repository  {
           email
           name
         },
-        ... CommitStatus2
+        ... CommitStatus
       }
     }
   }
 }
-fragment CommitStatus2 on GitHub_Commit {
+fragment CommitStatus on GitHub_Commit {
   status {
     state,
     contexts {
-      ... StatusContextInfo2
+      ... StatusContextInfo
     }
   }
 }
-fragment StatusContextInfo2 on GitHub_StatusContext {
+fragment StatusContextInfo on GitHub_StatusContext {
   state,
   context,
   createdAt,
