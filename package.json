@@ -8,6 +8,7 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
+    "@material-ui/core": "^3.2.0",
     "gatsby": "^2.0.14",
     "gatsby-source-graphql": "^2.0.3",
     "react": "^16.5.2",
