@@ -1,6 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import Card from '@material-ui/core/Card';
+
 const IndividualStatusContext = function ( statusContext ) {
   
   var divStyle = {
@@ -27,10 +29,10 @@ const IndividualStatusContext = function ( statusContext ) {
   }
 
   return (
-      <div style={divStyle}>
+      <Card style={divStyle}>
         <p><a style={aStyle} href={statusContext.statusContext.targetUrl}>{statusContext.statusContext.state}: {statusContext.statusContext.context}</a></p>
         createdAt: {statusContext.statusContext.createdAt}
-      </div>
+      </Card>
 )}
 
 export default IndividualStatusContext

@@ -1,31 +1,30 @@
 import React from "react"
-import IndividualStatusContext from "./IndividualStatusContext"
 import StatusContextList from "./StatusContextList"
-
-
-var divStyle = {
-  //clear: 'both',
-  border: '3px solid #000',
-  margin: '20px',
-  padding: '20px'
-};
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import ExpansionPanel from '@material-ui/core/ExpansionPanel';
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import Typography from '@material-ui/core/Typography';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const RepositoryList = ({ repositories }) => (
   <div>
     {repositories.map((repository, i) => (
-      <div  style={divStyle} key={i}>
-        <h2>{repository.node.name}</h2>
-        url: {repository.node.url}
-        <br />
-        defaultBranch: {repository.node.defaultBranchRef.name}
-        <br />
-        status: {repository.node.defaultBranchRef.target.status.state}
-        <br />
-         <StatusContextList statusContexts={repository.node.defaultBranchRef.target.status.contexts} />
-
-
-            
-      </div>
+      <ExpansionPanel>
+        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+          {repository.node.name}
+        </ExpansionPanelSummary>
+        <ExpansionPanelDetails>
+          url: {repository.node.url}
+          <br />
+          defaultBranch: {repository.node.defaultBranchRef.name}
+          <br />
+          status: {repository.node.defaultBranchRef.target.status.state}
+          <br />
+          <StatusContextList statusContexts={repository.node.defaultBranchRef.target.status.contexts} />
+        </ExpansionPanelDetails>
+     </ExpansionPanel>
     ))}
   </div>
 )
