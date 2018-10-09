@@ -6,6 +6,7 @@ const repos = [
   "stevector/nerdologues-d8",
   "pantheon-systems/search_api_pantheon",
   "pantheon-systems/pantheon_advanced_page_cache",
+  "pantheon-systems/pantheon-advanced-page-cache",
   "pantheon-systems/example-drops-8-composer",
   "pantheon-systems/drops-8",
   "pantheon-systems/wp-saml-auth",
