@@ -1,18 +1,20 @@
 const path = require(`path`);
 
 const repos = [
-  "repo:stevector/migrate_pantheon",
-  "repo:pantheon-systems/terminus-build-tools-plugin",
-  "repo:stevector/nerdologues-d8",
-  "repo:pantheon-systems/pantheon-wordpress-develop",
-  "repo:pantheon-systems/example-drops-8-composer",
-  "repo:pantheon-systems/drops-8",
-  "repo:pantheon-systems/wp-saml-auth",
-  "repo:pantheon-systems/wp-redis",
-  "repo:pantheon-systems/WordPress",
-  "repo:pantheon-systems/wp-native-php-sessions",
-  "repo:pantheon-systems/solr-power",
-  "repo:stevector/migrate_pantheon"
+  "stevector/migrate_pantheon",
+  "pantheon-systems/terminus-build-tools-plugin",
+  "stevector/nerdologues-d8",
+  "pantheon-systems/search_api_pantheon",
+  "pantheon-systems/pantheon_advanced_page_cache",
+  "pantheon-systems/example-drops-8-composer",
+  "pantheon-systems/drops-8",
+  "pantheon-systems/wp-saml-auth",
+  "pantheon-systems/wp-redis",
+  "pantheon-systems/WordPress",
+  "pantheon-systems/wp-native-php-sessions",
+  "pantheon-systems/solr-power",
+  "pantheon-systems/search_api_solor",
+  "stevector/migrate_pantheon"
 ];
 
 // Implement the Gatsby API “createPages”. This is called once the
@@ -22,7 +24,7 @@ exports.createPages = ({ actions, graphql }) => {
 
   return new Promise((resolve, reject) => {
     const Dashboard = path.resolve(`src/components/Dashboard.js`);
-    const search_string = repos.join(' ');
+    const search_string = repos.map(repoSlug => "repo:" + repoSlug).join(' ');
     // Query for recipe nodes to use in creating pages.
     resolve(
       createPage({
