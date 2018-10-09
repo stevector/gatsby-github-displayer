@@ -1,0 +1,12 @@
+.SUCCESS {
+  color:forestGreen;
+}
+
+.ERROR,
+.FAILURE {
+  color:Crimson;
+}
+
+.PENDING {
+  color:yellow;
+}

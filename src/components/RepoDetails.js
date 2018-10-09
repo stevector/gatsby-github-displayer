@@ -7,7 +7,7 @@ const RepoDetails = ({ repository }) => (
           <br />
           defaultBranch: {repository.node.defaultBranchRef.name}
           <br />
-          status: {repository.node.defaultBranchRef.target.status.state}
+          state: {repository.node.defaultBranchRef.target.status.state}
           <br />
           <StatusContextList statusContexts={repository.node.defaultBranchRef.target.status.contexts} />
     </div>
