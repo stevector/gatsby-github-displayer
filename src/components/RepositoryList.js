@@ -1,11 +1,12 @@
 import React from "react"
-import StatusContextList from "./StatusContextList"
+import RepoDetails  from "./RepoDetails"
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const RepositoryList = ({ repositories }) => (
+
   <div>
     {repositories.map((repository, i) => (
       <ExpansionPanel>
@@ -13,13 +14,7 @@ const RepositoryList = ({ repositories }) => (
           {repository.node.name}
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-          url: {repository.node.url}
-          <br />
-          defaultBranch: {repository.node.defaultBranchRef.name}
-          <br />
-          status: {repository.node.defaultBranchRef.target.status.state}
-          <br />
-          <StatusContextList statusContexts={repository.node.defaultBranchRef.target.status.contexts} />
+          <RepoDetails repository={repository} />
         </ExpansionPanelDetails>
      </ExpansionPanel>
     ))}
