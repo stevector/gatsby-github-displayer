@@ -4,7 +4,7 @@ import RepositoryList from "../components/RepositoryList"
 const Dashboard = ({ data }) => (
   <div>
     <h1>Repositories statuses</h1>
-    <a href="https://github.com/stevector/gatsby-github-displayer">Built with Gatsby and the GitHub GraphQL API</a>
+    <p><a href="https://github.com/stevector/gatsby-github-displayer">Built with Gatsby and the GitHub GraphQL API</a></p>
     <RepositoryList repositories={data.github.search.edges} />
   </div>
 )
