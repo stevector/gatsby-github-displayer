@@ -1,8 +1,10 @@
 # gatsby-graphql-source example
 
-Simple gatsby site that displays your public owned github repos using Github GraphQL API.
+Simple gatsby site that displays statuses of an arbitary list of repos. It is mainly an excuse to toy around with Gatsby and the GitHub GraphQL API.
 
-[See it here](https://gatsby-github-displayer.netlify.com/)
+[See it here](https://stevector-gatsby-github-displayer.netlify.com/)
+
+This repos is a fork of another example: https://github.com/freiksenet/gatsby-github-displayer. 
 
 ## Running in development
 
