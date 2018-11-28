@@ -12,7 +12,6 @@ const Dashboard = ({ data }) => (
 export default Dashboard
 
 export const query = graphql`
-
 query DashboardQuery($searchstring: String!) {
   github {
     search(query: $searchstring, type: REPOSITORY, first: 100) {
