@@ -12,6 +12,7 @@
     "@material-ui/icons": "^3.0.1",
     "gatsby": "^2.0.14",
     "gatsby-source-graphql": "^2.0.3",
+    "material-table": "^1.2.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2"
   },
