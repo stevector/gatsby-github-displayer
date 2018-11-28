@@ -18,23 +18,22 @@ const repos = [
   "stevector/migrate_pantheon"
 ];
 
-// Implement the Gatsby API “createPages”. This is called once the
-// data layer is bootstrapped to let plugins create pages from data.
-exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions
-
-  return new Promise((resolve, reject) => {
-    const Dashboard = path.resolve(`src/components/Dashboard.js`);
-    const search_string = repos.map(repoSlug => "repo:" + repoSlug).join(' ');
-    // Query for recipe nodes to use in creating pages.
-    resolve(
-      createPage({
-        path: '/',
-        component: Dashboard,
-        context: {
-          searchstring:search_string
-        },
-      })
-    )
+exports.createPages = async ({ actions: { createPage } }) => {
+  
+  const search_string = repos.map(repoSlug => "repo:" + repoSlug).join(' ');  
+  
+  createPage({
+    path: `/`,
+    component: path.resolve(`src/components/Dashboard.js`),
+    context: { searchstring:search_string },
   })
+
+  createPage({
+    path: `/material-table`,
+    component: path.resolve(`src/components/Table.js`),
+    context: { searchstring:search_string },
+  })
+
+
+
 }
